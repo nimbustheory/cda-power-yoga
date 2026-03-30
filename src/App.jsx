@@ -60,31 +60,28 @@ const STUDIO_CONFIG = {
 //  STUDIO IMAGES — Real URLs from cdapoweryoga.com
 // ═══════════════════════════════════════════════════════════════
 const STUDIO_IMAGES = {
-  logo: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/4d37c295-1cb4-4ef8-b175-b5faa07d4480/businesscards_CDA_good_outlines.jpg",
-  logoWhite: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/1533145772717-R0BX57HW22LZGRMIYQIK/CDAhorizontallogo_white.png",
-  heroHome: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/3d06eb92-1d71-411f-adaa-c4ae56bc980a/D29A0127.jpg",
-  heroClasses: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/c3a01fbc-521c-4fa7-931b-51e3bc82578e/D29A0170.jpg",
-  heroSchedule: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/1cc4a848-cec1-4202-a0f9-3b6068f1509a/D29A0142.jpg",
-  heroPractice: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/63feb894-b63e-4f7c-9fb8-06ed49f14f78/D29A0163.jpg",
-  heroCommunity: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/991297b7-c531-4f01-9507-d89bbb56b720/D29A0201.jpg",
-  heroTeachers: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/49782219-312f-4ec6-a9b1-14f507014275/D29A0369.jpg",
-  heroEvents: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/daf4feff-f965-493d-a102-398e79e51d4c/tt2026.jpg",
-  heroMembership: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/19b74bc8-b664-4b0c-87a2-c86a35d68580/D29A0238.jpg",
-  trainingGroup: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/a361b906-1c38-456e-9ad3-d2d982370541/IMG_4620.png",
-  studioExterior: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/1535386845994-7GIFG3JFLNU081FL0S66/b44a3b2379d9fff553c204c2d4a9142cl-m0xd-w480_h480_q80.jpg",
-  eventAcroYoga: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/83889cd9-dbc1-4052-8314-9aa97ab34c40/FullSizeRender+8+copy.jpg",
-  eventBreathwork: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/effc28b2-6e19-4a6f-8aea-54f666c3a837/Breathwork+Saturday+6+pm.png",
-  communityBenefit1: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/497c7df0-d5b6-4cfb-92ec-235cf0fcc298/tempImagejc1NKv.jpg",
-  communityBenefit2: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/c760d1cb-0964-4094-ac52-17d826bb6a51/tempImagedOxbwb.jpg",
+  logo: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/4d37c295-1cb4-4ef8-b175-b5faa07d4480/businesscards_CDA_good_outlines.jpg?format=300w",
+  heroHome: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/3d06eb92-1d71-411f-adaa-c4ae56bc980a/D29A0127.jpg?format=750w",
+  heroClasses: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/c3a01fbc-521c-4fa7-931b-51e3bc82578e/D29A0170.jpg?format=750w",
+  heroSchedule: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/1cc4a848-cec1-4202-a0f9-3b6068f1509a/D29A0142.jpg?format=750w",
+  heroPractice: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/63feb894-b63e-4f7c-9fb8-06ed49f14f78/D29A0163.jpg?format=750w",
+  heroCommunity: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/991297b7-c531-4f01-9507-d89bbb56b720/D29A0201.jpg?format=750w",
+  heroTeachers: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/49782219-312f-4ec6-a9b1-14f507014275/D29A0369.jpg?format=750w",
+  heroEvents: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/daf4feff-f965-493d-a102-398e79e51d4c/tt2026.jpg?format=750w",
+  heroMembership: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/19b74bc8-b664-4b0c-87a2-c86a35d68580/D29A0238.jpg?format=750w",
+  trainingGroup: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/a361b906-1c38-456e-9ad3-d2d982370541/IMG_4620.png?format=500w",
+  studioExterior: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/1535386845994-7GIFG3JFLNU081FL0S66/b44a3b2379d9fff553c204c2d4a9142cl-m0xd-w480_h480_q80.jpg?format=300w",
+  eventAcroYoga: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/83889cd9-dbc1-4052-8314-9aa97ab34c40/FullSizeRender+8+copy.jpg?format=500w",
+  eventBreathwork: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/effc28b2-6e19-4a6f-8aea-54f666c3a837/Breathwork+Saturday+6+pm.png?format=500w",
+  communityBenefit1: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/497c7df0-d5b6-4cfb-92ec-235cf0fcc298/tempImagejc1NKv.jpg?format=500w",
+  communityBenefit2: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/c760d1cb-0964-4094-ac52-17d826bb6a51/tempImagedOxbwb.jpg?format=500w",
   teachers: {
-    ashley: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/e6e2964e-3684-4824-a8d1-874268076d8d/D29A0639.jpg",
-    amanda: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/cf6d6ce1-f196-474f-ac42-e0af44d1d9fc/D29A0562.jpg",
-    bree: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/1f0b8c27-7750-42e0-80cc-914db5fc7786/4798222591518491078.jpg",
-    claire: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/6a5a5987-80aa-4e39-b963-ec090d3d8643/IMG_1931.JPG",
-    jared: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/1632115176851-UTNB6TR9WPMVVLXXPVPI/Jared.jpg",
-    chris: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/365f359e-8eab-4215-9a4e-800e55cb9fb0/IMG_3881.jpeg",
-    melissa: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/7b235c30-0c03-4f20-852f-141578f3eafd/D29A0574.jpg",
-    mike: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/1570068483845-T8BQGYIZPW8YNXVW7AA5/mike.jpg",
+    ashley: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/e6e2964e-3684-4824-a8d1-874268076d8d/D29A0639.jpg?format=300w",
+    amanda: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/cf6d6ce1-f196-474f-ac42-e0af44d1d9fc/D29A0562.jpg?format=300w",
+    bree: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/1f0b8c27-7750-42e0-80cc-914db5fc7786/4798222591518491078.jpg?format=300w",
+    claire: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/6a5a5987-80aa-4e39-b963-ec090d3d8643/IMG_1931.JPG?format=300w",
+    jared: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/1632115176851-UTNB6TR9WPMVVLXXPVPI/Jared.jpg?format=300w",
+    chris: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/365f359e-8eab-4215-9a4e-800e55cb9fb0/IMG_3881.jpeg?format=300w",
   },
 };
 
@@ -384,7 +381,7 @@ function HomePage() {
           <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
             {ANNOUNCEMENTS.map(a => (
               <div key={a.id} style={{ borderRadius: 12, borderLeft: `4px solid ${a.type === "celebration" ? T.accent : a.type === "alert" ? T.warning : T.textMuted}`, background: a.type === "celebration" ? T.accentGhost : a.type === "alert" ? T.warningGhost : T.bgDim, overflow: "hidden" }}>
-                {a.image && <img src={a.image} alt="" style={{ width: "100%", height: 100, objectFit: "cover" }} />}
+                {a.image && <img src={a.image} alt="" loading="lazy" style={{ width: "100%", height: 100, objectFit: "cover" }} />}
                 <div style={{ padding: "14px 16px" }}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 8 }}>
                     <div>
@@ -586,8 +583,8 @@ function CommunityPage() {
 
       {/* Community Photos */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8, marginBottom: 16 }}>
-        <img src={STUDIO_IMAGES.communityBenefit1} alt="CDA Power Yoga community" style={{ width: "100%", height: 120, objectFit: "cover", borderRadius: 12 }} />
-        <img src={STUDIO_IMAGES.communityBenefit2} alt="CDA Power Yoga community" style={{ width: "100%", height: 120, objectFit: "cover", borderRadius: 12 }} />
+        <img src={STUDIO_IMAGES.communityBenefit1} alt="CDA Power Yoga community" loading="lazy" style={{ width: "100%", height: 120, objectFit: "cover", borderRadius: 12 }} />
+        <img src={STUDIO_IMAGES.communityBenefit2} alt="CDA Power Yoga community" loading="lazy" style={{ width: "100%", height: 120, objectFit: "cover", borderRadius: 12 }} />
       </div>
 
       <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
@@ -634,7 +631,7 @@ function TeachersPage() {
             <div key={teacher.id} onClick={() => setExpandedTeacher(expanded ? null : teacher.id)} style={{ background: T.bgCard, border: `1px solid ${T.border}`, borderRadius: 14, overflow: "hidden", cursor: "pointer", transition: "all 0.2s" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 14, padding: "16px 18px" }}>
                 {teacher.photo ? (
-                  <img src={teacher.photo} alt={teacher.firstName} onError={e => { e.target.style.display = "none"; if (e.target.nextSibling) e.target.nextSibling.style.display = "flex"; }} style={{ width: 56, height: 56, borderRadius: 14, objectFit: "cover", flexShrink: 0 }} />
+                  <img src={teacher.photo} alt={teacher.firstName} loading="lazy" onError={e => { e.target.style.display = "none"; if (e.target.nextSibling) e.target.nextSibling.style.display = "flex"; }} style={{ width: 56, height: 56, borderRadius: 14, objectFit: "cover", flexShrink: 0 }} />
                 ) : null}
                 <div style={{ width: 56, height: 56, borderRadius: 14, background: `linear-gradient(135deg, ${T.accent}, ${T.accentDark})`, display: teacher.photo ? "none" : "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Cormorant Garamond', serif", fontSize: 22, color: "#fff", flexShrink: 0, fontWeight: 600 }}>
                   {teacher.firstName[0]}{teacher.lastName[0]}
@@ -1308,7 +1305,7 @@ function SettingsModal({ onClose }) {
         </div>
         <div style={{ padding: "14px 0" }}>
           <h3 style={{ fontSize: 12, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: T.textMuted, margin: "0 0 10px" }}>Studio</h3>
-          <img src={STUDIO_IMAGES.studioExterior} alt="CDA Power Yoga at Village at Riverstone" style={{ width: "100%", borderRadius: 10, marginBottom: 10, objectFit: "cover", maxHeight: 140 }} />
+          <img src={STUDIO_IMAGES.studioExterior} alt="CDA Power Yoga at Village at Riverstone" loading="lazy" style={{ width: "100%", borderRadius: 10, marginBottom: 10, objectFit: "cover", maxHeight: 140 }} />
           <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
             <MapPin size={14} color={T.textMuted} />
             <p style={{ fontSize: 13, color: T.textMuted, margin: 0 }}>{STUDIO_CONFIG.address.street}, {STUDIO_CONFIG.address.city}</p>
