@@ -5,7 +5,7 @@ import {
   PartyPopper, ArrowUpRight, ArrowDownRight, Award, DollarSign, LayoutDashboard,
   UserCheck, Megaphone, LogOut, Plus, Edit3, Send, Check, Search, Copy, Info,
   CircleCheck, UserPlus, Heart, Flame, Star, Sun, Moon, Wind, Sparkles,
-  Mountain, Leaf, Music, Gift, Share2, MapPin, Zap, Waves, Eye
+  Mountain, Leaf, Music, Gift, Share2, MapPin, Zap, Waves, Eye, Trash2
 } from "lucide-react";
 import {
   BarChart, Bar, AreaChart, Area, XAxis, YAxis,
@@ -75,6 +75,7 @@ const STUDIO_IMAGES = {
   eventBreathwork: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/effc28b2-6e19-4a6f-8aea-54f666c3a837/Breathwork+Saturday+6+pm.png?format=500w",
   communityBenefit1: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/497c7df0-d5b6-4cfb-92ec-235cf0fcc298/tempImagejc1NKv.jpg?format=500w",
   communityBenefit2: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/c760d1cb-0964-4094-ac52-17d826bb6a51/tempImagedOxbwb.jpg?format=500w",
+  teamPhoto: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/d695c6b6-266b-423e-91f2-db6cbe0e8300/team2026.jpg?format=750w",
   teachers: {
     ashley: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/e6e2964e-3684-4824-a8d1-874268076d8d/D29A0639.jpg?format=300w",
     amanda: "https://images.squarespace-cdn.com/content/v1/5b61e95d96d455d9a929ed35/cf6d6ce1-f196-474f-ac42-e0af44d1d9fc/D29A0562.jpg?format=300w",
@@ -561,7 +562,7 @@ function PracticePage() {
                   <IconComp size={24} color={earned ? badge.color : T.textFaint} />
                 </div>
                 <p style={{ fontSize: 13, fontWeight: 700, color: T.text, margin: "0 0 2px" }}>{name}</p>
-                <p style={{ fontSize: 11, color: T.textMuted, margin: 0 }}>{earned ? "Earned ✓" : "Keep going!"}</p>
+                <p style={{ fontSize: 11, color: T.textMuted, margin: 0, display: "flex", alignItems: "center", justifyContent: "center", gap: 3 }}>{earned ? <><Check size={12} /> Earned</> : "Keep going!"}</p>
               </div>
             );
           })}
@@ -893,7 +894,7 @@ function AdminMembersPage() {
         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
           <thead>
             <tr style={{ borderBottom: "1px solid #2a3050" }}>
-              {["Member", "Membership", "Status", "Classes", "Last Visit"].map(h => (
+              {["Member", "Membership", "Status", "Classes", "Last Visit", ""].map(h => (
                 <th key={h} style={{ padding: "12px 16px", textAlign: "left", color: "#9ca3af", fontWeight: 600, fontSize: 11, textTransform: "uppercase", letterSpacing: "0.05em" }}>{h}</th>
               ))}
             </tr>
@@ -913,6 +914,12 @@ function AdminMembersPage() {
                 </td>
                 <td style={{ padding: "12px 16px", color: "#d1d5db", fontFamily: "monospace" }}>{m.checkIns}</td>
                 <td style={{ padding: "12px 16px", color: "#9ca3af", fontSize: 12 }}>{formatDateShort(m.lastVisit)}</td>
+                <td style={{ padding: "12px 16px" }}>
+                  <div style={{ display: "flex", gap: 4 }}>
+                    <button style={{ padding: "4px 8px", borderRadius: 6, border: "1px solid #2a3050", background: "transparent", color: "#9ca3af", fontSize: 11, cursor: "pointer", display: "flex", alignItems: "center", gap: 4 }}><Edit3 size={12} /> Edit</button>
+                    <button style={{ padding: "4px 8px", borderRadius: 6, border: "1px solid #2a3050", background: "transparent", color: "#f87171", fontSize: 11, cursor: "pointer", display: "flex", alignItems: "center", gap: 4 }}><Trash2 size={12} /></button>
+                  </div>
+                </td>
               </tr>
             ))}
           </tbody>
@@ -925,12 +932,17 @@ function AdminMembersPage() {
 function AdminSchedulePage() {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-      <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 28, color: "#fff", margin: 0 }}>Schedule Management</h1>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 28, color: "#fff", margin: 0 }}>Schedule Management</h1>
+        <button style={{ display: "flex", alignItems: "center", gap: 6, padding: "8px 16px", borderRadius: 8, border: "none", background: T.accent, color: "#fff", fontWeight: 600, fontSize: 13, cursor: "pointer" }}>
+          <Plus size={16} /> Add Class
+        </button>
+      </div>
       <div style={{ background: "#252d27", border: "1px solid #2a3050", borderRadius: 12, overflow: "hidden" }}>
         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
           <thead>
             <tr style={{ borderBottom: "1px solid #2a3050" }}>
-              {["Time", "Class", "Teacher", "Capacity", "Registered", "Status"].map(h => (
+              {["Time", "Class", "Teacher", "Capacity", "Registered", "Status", ""].map(h => (
                 <th key={h} style={{ padding: "12px 16px", textAlign: "left", color: "#9ca3af", fontWeight: 600, fontSize: 11, textTransform: "uppercase", letterSpacing: "0.05em" }}>{h}</th>
               ))}
             </tr>
@@ -949,6 +961,12 @@ function AdminSchedulePage() {
                   <span style={{ padding: "3px 8px", borderRadius: 6, fontSize: 11, fontWeight: 600, background: c.registered >= c.capacity ? `${T.warning}20` : `${T.accent}20`, color: c.registered >= c.capacity ? T.warning : T.accent }}>
                     {c.registered >= c.capacity ? "Full" : "Open"}
                   </span>
+                </td>
+                <td style={{ padding: "12px 16px" }}>
+                  <div style={{ display: "flex", gap: 4 }}>
+                    <button style={{ padding: "4px 8px", borderRadius: 6, border: "1px solid #2a3050", background: "transparent", color: "#9ca3af", fontSize: 11, cursor: "pointer", display: "flex", alignItems: "center", gap: 4 }}><Edit3 size={12} /> Edit</button>
+                    <button style={{ padding: "4px 8px", borderRadius: 6, border: "1px solid #2a3050", background: "transparent", color: "#f87171", fontSize: 11, cursor: "pointer", display: "flex", alignItems: "center", gap: 4 }}><Trash2 size={12} /></button>
+                  </div>
                 </td>
               </tr>
             ))}
@@ -973,7 +991,7 @@ function AdminTeachersPage() {
           <div key={teacher.id} style={{ background: "#252d27", border: "1px solid #2a3050", borderRadius: 12, padding: 18 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
               {teacher.photo ? (
-                <img src={teacher.photo} alt={teacher.firstName} onError={e => { e.target.style.display = "none"; if (e.target.nextSibling) e.target.nextSibling.style.display = "flex"; }} style={{ width: 48, height: 48, borderRadius: 10, objectFit: "cover" }} />
+                <img src={teacher.photo} alt={teacher.firstName} loading="lazy" onError={e => { e.target.style.display = "none"; if (e.target.nextSibling) e.target.nextSibling.style.display = "flex"; }} style={{ width: 48, height: 48, borderRadius: 10, objectFit: "cover" }} />
               ) : null}
               <div style={{ width: 48, height: 48, borderRadius: 10, background: `linear-gradient(135deg, ${T.accent}, ${T.accentDark})`, display: teacher.photo ? "none" : "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Cormorant Garamond', serif", fontSize: 20, color: "#fff", fontWeight: 600 }}>
                 {teacher.firstName[0]}{teacher.lastName[0]}
@@ -1020,6 +1038,11 @@ function AdminEventsPage() {
               <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 28, color: T.accent, fontWeight: 700 }}>{ev.registered}</div>
               <p style={{ fontSize: 11, color: "#9ca3af" }}>of {ev.maxParticipants} spots</p>
             </div>
+          </div>
+          <div style={{ display: "flex", gap: 6, marginTop: 12, borderTop: "1px solid #2a3050", paddingTop: 12 }}>
+            <button style={{ flex: 1, padding: "8px 0", borderRadius: 6, border: "1px solid #2a3050", background: "transparent", color: "#d1d5db", fontSize: 12, fontWeight: 600, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 4 }}><Edit3 size={14} /> Edit</button>
+            <button style={{ flex: 1, padding: "8px 0", borderRadius: 6, border: "1px solid #2a3050", background: "transparent", color: "#d1d5db", fontSize: 12, fontWeight: 600, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 4 }}><Copy size={14} /> Duplicate</button>
+            <button style={{ padding: "8px 12px", borderRadius: 6, border: "1px solid #2a3050", background: "transparent", color: "#f87171", fontSize: 12, cursor: "pointer", display: "flex", alignItems: "center", gap: 4 }}><Trash2 size={14} /></button>
           </div>
         </div>
       ))}
@@ -1226,7 +1249,7 @@ function CTACard() {
   const { setPage } = useContext(AppContext);
   return (
     <div style={{ background: `linear-gradient(165deg, ${T.bg}, hsl(138,14%,28%))`, borderRadius: 16, padding: "24px 20px", color: "#fff", position: "relative", overflow: "hidden" }}>
-      <div style={{ position: "absolute", inset: 0, backgroundImage: `url(${STUDIO_IMAGES.heroCommunity})`, backgroundSize: "cover", backgroundPosition: "center", opacity: 0.15 }} />
+      <div style={{ position: "absolute", inset: 0, backgroundImage: `url(${STUDIO_IMAGES.teamPhoto})`, backgroundSize: "cover", backgroundPosition: "center top", opacity: 0.18 }} />
       <div style={{ position: "absolute", inset: 0, background: "linear-gradient(165deg, rgba(36,44,38,0.78) 0%, rgba(36,44,38,0.6) 100%)" }} />
       <div style={{ position: "relative" }}>
         <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 24, margin: "0 0 6px", fontWeight: 600 }}>New to CDA Power Yoga?</h3>
@@ -1311,7 +1334,7 @@ function SettingsModal({ onClose }) {
             <p style={{ fontSize: 13, color: T.textMuted, margin: 0 }}>{STUDIO_CONFIG.address.street}, {STUDIO_CONFIG.address.city}</p>
           </div>
           <p style={{ fontSize: 13, color: T.textMuted, margin: "8px 0 0" }}>{STUDIO_CONFIG.name} {STUDIO_CONFIG.subtitle} App v1.0</p>
-          <p style={{ fontSize: 12, color: T.textFaint, margin: "4px 0 0" }}>Powered by Studio Platform</p>
+          <p style={{ fontSize: 12, color: T.textFaint, margin: "4px 0 0" }}>Powered by LUMI</p>
         </div>
         <button style={{ width: "100%", padding: "12px 0", borderRadius: 8, border: `1px solid ${T.border}`, background: "transparent", color: T.accent, fontWeight: 700, fontSize: 14, cursor: "pointer", marginTop: 8 }}>
           Sign Out
@@ -1547,9 +1570,9 @@ export default function App() {
   ];
 
   const salesCards = [
-    { icon: Shield, title: "Admin Dashboard", desc: "Tap the shield icon in the app header to access the full admin suite — analytics, member CRM, scheduling, and broadcast tools." },
-    { icon: Sparkles, title: "Built for CDA Power Yoga", desc: "Custom-designed around your brand, class types, teachers, and the powerful community your members already love." },
-    { icon: Zap, title: "MindBody Integration", desc: "Connects directly with your existing MindBody setup for booking, payments, and member management — no workflow changes needed." },
+    { icon: Shield, title: "Admin Dashboard", desc: "Tap the shield icon in the app header to access the full admin suite -- analytics, member CRM, scheduling, and broadcast tools." },
+    { icon: Sparkles, title: "Built for CDA Power Yoga", desc: "Custom-designed around your brand, class types, teachers, and the community your members already love." },
+    { icon: Zap, title: "MindBody Integration", desc: "Connects directly with your existing MindBody setup for booking, payments, and member management -- no workflow changes needed." },
   ];
 
   // ——— PHONE FRAME (shared between wrapper and standalone) ———
@@ -1651,10 +1674,10 @@ export default function App() {
 
         {/* LEFT SIDEBAR — Sales Info */}
         <div className="sales-sidebar" style={{ width: 280, flexShrink: 0, display: "flex", flexDirection: "column", justifyContent: "center" }}>
-          <p style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.2em", color: T.accent, marginBottom: 16 }}>Prototype Demo</p>
+          <p style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.2em", color: T.accent, marginBottom: 16 }}>App Preview</p>
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 32 }}>
             <div style={{ width: 48, height: 48, borderRadius: 12, background: T.accent, display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
-              <img src={STUDIO_IMAGES.logo} alt="CDA" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <img src={STUDIO_IMAGES.logo} alt="CDA" onError={e => { e.target.style.display = "none"; }} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </div>
             <div>
               <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 28, margin: 0, fontWeight: 600, color: "#2c2f2c" }}>{STUDIO_CONFIG.name}</h1>
@@ -1672,7 +1695,10 @@ export default function App() {
               </div>
             ))}
           </div>
-          <p style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.15em", color: "#b0b8b2", marginTop: 40 }}>Built by Nimbus Theory</p>
+          <div style={{ marginTop: 40 }}>
+            <p style={{ fontSize: 12, fontWeight: 600, color: "#8a9488", margin: "0 0 2px" }}>Built by LUMI</p>
+            <p style={{ fontSize: 11, color: "#b0b8b2", margin: 0 }}>LumiClass.app</p>
+          </div>
         </div>
 
         {/* CENTER — Phone Frame */}
@@ -1695,6 +1721,8 @@ export default function App() {
       </div>
 
       <style>{`
+        * { scrollbar-width: none; -ms-overflow-style: none; }
+        *::-webkit-scrollbar { display: none; }
         @media (max-width: 1100px) {
           .sales-sidebar { display: none !important; }
         }
