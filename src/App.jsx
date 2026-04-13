@@ -1570,9 +1570,9 @@ export default function App() {
   ];
 
   const salesCards = [
-    { icon: Shield, title: "Admin Dashboard", desc: "Tap the shield icon in the app header to access the full admin suite -- analytics, member CRM, scheduling, and broadcast tools." },
-    { icon: Sparkles, title: "Built for CDA Power Yoga", desc: "Custom-designed around your brand, class types, teachers, and the community your members already love." },
-    { icon: Zap, title: "MindBody Integration", desc: "Connects directly with your existing MindBody setup for booking, payments, and member management -- no workflow changes needed." },
+    { icon: Award, title: "Member Engagement", desc: "Practice streaks, milestone badges, community celebrations, and guest passes keep members connected and motivated." },
+    { icon: Sparkles, title: "Your Brand, Your App", desc: `Custom-designed with your studio's colors, fonts, and personality -- every pixel reflects the ${STUDIO_CONFIG.name} ${STUDIO_CONFIG.subtitle} brand.` },
+    { icon: Zap, title: "Ready to Launch?", desc: "Get your studio's custom loyalty app built and deployed in weeks, not months.", cta: true },
   ];
 
   // ——— PHONE FRAME (shared between wrapper and standalone) ———
@@ -1670,10 +1670,10 @@ export default function App() {
   // ——— CONSUMER LAYOUT WITH SALES WRAPPER ———
   return (
     <AppContext.Provider value={{ page, setPage, classRegistrations, registerForClass, openReservation, feedCelebrations, celebrateFeed }}>
-      <div style={{ display: "flex", justifyContent: "center", gap: 48, minHeight: "100vh", background: "#f4f1ec", fontFamily: "'DM Sans', system-ui, sans-serif", padding: "40px 32px" }}>
+      <div style={{ display: "flex", justifyContent: "center", gap: 48, height: "100vh", overflow: "hidden", background: "#f4f1ec", fontFamily: "'DM Sans', system-ui, sans-serif", padding: "40px 32px" }}>
 
         {/* LEFT SIDEBAR — Sales Info */}
-        <div className="sales-sidebar" style={{ width: 280, flexShrink: 0, display: "flex", flexDirection: "column", justifyContent: "center" }}>
+        <div className="sales-sidebar" style={{ width: 280, flexShrink: 0, display: "flex", flexDirection: "column", justifyContent: "center", overflowY: "auto" }}>
           <p style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.2em", color: T.accent, marginBottom: 16 }}>App Preview</p>
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 32 }}>
             <div style={{ width: 48, height: 48, borderRadius: 12, background: T.accent, display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
@@ -1696,25 +1696,25 @@ export default function App() {
             ))}
           </div>
           <div style={{ marginTop: 40 }}>
-            <p style={{ fontSize: 12, fontWeight: 600, color: "#8a9488", margin: "0 0 2px" }}>Built by LUMI</p>
-            <p style={{ fontSize: 11, color: "#b0b8b2", margin: 0 }}>LumiClass.app</p>
+            <p style={{ fontSize: 12, fontWeight: 600, color: "#8a9488", margin: 0 }}>Built by LUMI &mdash; LumiClass.App</p>
           </div>
         </div>
 
         {/* CENTER — Phone Frame */}
-        <div style={{ width: 390, flexShrink: 0, borderRadius: 24, overflow: "hidden", boxShadow: "0 8px 40px rgba(0,0,0,.12), 0 2px 12px rgba(0,0,0,.08)", background: T.bgDim, position: "relative", maxHeight: "88vh", display: "flex", flexDirection: "column", border: "1px solid #e0ddd8" }}>
+        <div style={{ width: 390, flexShrink: 0, alignSelf: "center", borderRadius: 24, overflow: "hidden", boxShadow: "0 8px 40px rgba(0,0,0,.12), 0 2px 12px rgba(0,0,0,.08)", background: T.bgDim, position: "relative", maxHeight: "88vh", display: "flex", flexDirection: "column", border: "1px solid #e0ddd8" }}>
           <div style={{ flex: 1, overflow: "auto" }}>
             {phoneContent}
           </div>
         </div>
 
         {/* RIGHT SIDEBAR — Feature Cards */}
-        <div className="sales-sidebar" style={{ width: 280, flexShrink: 0, display: "flex", flexDirection: "column", justifyContent: "center", gap: 20 }}>
+        <div className="sales-sidebar" style={{ width: 280, flexShrink: 0, display: "flex", flexDirection: "column", justifyContent: "center", gap: 20, overflowY: "auto" }}>
           {salesCards.map((card, i) => (
-            <div key={i} style={{ background: "#fff", border: "1px solid #e0ddd8", borderRadius: 16, padding: 24 }}>
-              <card.icon size={24} color={T.accent} style={{ marginBottom: 12 }} />
-              <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 18, color: "#2c2f2c", margin: "0 0 8px", fontWeight: 600 }}>{card.title}</h3>
-              <p style={{ fontSize: 13, color: "#6a7268", lineHeight: 1.6, margin: 0 }}>{card.desc}</p>
+            <div key={i} style={{ background: card.cta ? T.accent : "#fff", border: card.cta ? "none" : "1px solid #e0ddd8", borderRadius: 16, padding: 24 }}>
+              <card.icon size={24} color={card.cta ? "#fff" : T.accent} style={{ marginBottom: 12 }} />
+              <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 18, color: card.cta ? "#fff" : "#2c2f2c", margin: "0 0 8px", fontWeight: 600 }}>{card.title}</h3>
+              <p style={{ fontSize: 13, color: card.cta ? "rgba(255,255,255,.85)" : "#6a7268", lineHeight: 1.6, margin: 0 }}>{card.desc}</p>
+              {card.cta && <button style={{ marginTop: 16, padding: "10px 24px", borderRadius: 10, border: "none", background: "#fff", color: T.accent, fontWeight: 700, fontSize: 14, cursor: "pointer" }}>Get Started</button>}
             </div>
           ))}
         </div>
